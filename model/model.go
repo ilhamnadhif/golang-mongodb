@@ -3,8 +3,8 @@ package model
 import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Customer struct {
-	Id   string `bson:"_id,omitempty"`
-	Name string `bson:"name,omitempty"`
+	Id       string `bson:"_id,omitempty"`
+	FullName string `bson:"full_name,omitempty"`
 }
 
 type Product struct {

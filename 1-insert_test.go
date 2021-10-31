@@ -20,7 +20,7 @@ func TestInsertOne(t *testing.T) {
 	coll := database.Collection("customers")
 	res, err := coll.InsertOne(context.Background(), model.Customer{
 		Id:   "khannedy",
-		Name: "Eko Kurniawan Khannedy",
+		FullName: "Eko Kurniawan Khannedy",
 	})
 	helper.PanicIfError(err)
 	fmt.Println(res)

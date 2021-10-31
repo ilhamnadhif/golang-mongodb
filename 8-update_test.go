@@ -131,3 +131,18 @@ func TestReplaceOne(t *testing.T) {
 
 	fmt.Println(res)
 }
+
+func TestUpdateCoba(t *testing.T) {
+	client := GetConnection()
+	defer CloseConnection(client)
+	database := client.Database("belajar-mongodb")
+	coll := database.Collection("products")
+
+	res, err := coll.UpdateOne(context.Background(), bson.D{{"_id", 1}}, bson.D{{
+		"$set", model.Product{
+			Name: "Indomie Ayam Bawang",
+		},
+	}})
+	helper.PanicIfError(err)
+	fmt.Println(res)
+}

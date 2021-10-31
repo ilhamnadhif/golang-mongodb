@@ -19,7 +19,7 @@ func TestFindOne(t *testing.T) {
 	err := coll.FindOne(context.Background(), bson.D{{"_id", "khannedy"}}).Decode(&customer)
 	helper.PanicIfError(err)
 	fmt.Println("Id", customer.Id)
-	fmt.Println("Name", customer.Name)
+	fmt.Println("Name", customer.FullName)
 
 }
 func TestFindOneNestedArray(t *testing.T) {
